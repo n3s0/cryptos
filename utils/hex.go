@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"encoding/hex"
 )
 
 func decodeHexToString(hexString string) (string, error) {

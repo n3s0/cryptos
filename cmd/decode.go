@@ -53,10 +53,9 @@ var decodeCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(decodeCmd)
-	decodeCmd.Flags().BoolVar(&decodeHex, "hex", "", false, "Decodes Hex to string")
-	decodeCmd.Flags().BoolVar(&decodeBase64, "base64", "", false, "Decodes Base64 to string")
-	decodeCmd.Flags().BoolVar(&decodeRot13, "rot13", "", false, "Decodes ROT13")
+	decodeCmd.Flags().BoolVarP(&decodeHex, "hex", "", false, "Decodes Hex to string")
+	decodeCmd.Flags().BoolVarP(&decodeBase64, "base64", "", false, "Decodes Base64 to string")
+	decodeCmd.Flags().BoolVarP(&decodeRot13, "rot13", "", false, "Decodes ROT13")
 	decodeCmd.Flags().StringVarP(&inputString, "input", "i", "", "Accepts string from user")
 }
-
 
