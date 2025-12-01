@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 )
 
-func decodeHexToString(hexString string) (string, error) {
+func DecodeHexToString(hexString string) (string, error) {
 	decodedBytes, err := hex.DecodeString(hexString)
 	if err != nil {
 		return "", fmt.Errorf("[!] Error: %+v", err)

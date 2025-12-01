@@ -25,7 +25,7 @@ var decodeCmd = &cobra.Command{
 		
 		if decodeHex {
 			fmt.Printf("[i] Decoding hex to string...\n")
-			decodedHexString, err := utils.decodeHexToString(inputString)
+			decodedHexString, err := utils.DecodeHexToString(inputString)
 			if err != nil {
 				fmt.Errorf("[!] Error: %v\n", err)
 			}
@@ -36,7 +36,7 @@ var decodeCmd = &cobra.Command{
 
 		if decodeBase64 {
 			fmt.Printf("[i] This flag will decode Base64 to string...\n")
-			decodedBase64String, err := utils.decodeBase64String(inputString)
+			decodedBase64String, err := utils.DecodeBase64ToString(inputString)
 			if err != nil {
 				fmt.Errorf("[!] Error: %v\n", err)
 			}
@@ -46,7 +46,12 @@ var decodeCmd = &cobra.Command{
 		}
 
 		if decodeRot13 {
-			fmt.Printf("[i] This flag will decode ROT13 to string...\n")
+			decodedRot13String, err := utils.DecodeRot13(inputString)
+			if err != nil {
+				fmt.Errorf("[!] Error: %v\n", err)
+			}
+			
+			fmt.Printf("[+] Just some output: %s", decodedRot13String)
 		}
 	},
 }

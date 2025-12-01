@@ -25,5 +25,5 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.PersistentFlags().BoolVar(&verbose, "verbose", "v", false, "Make output more verbose")
+	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Make output more verbose")
 }
