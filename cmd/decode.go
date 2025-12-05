@@ -35,7 +35,7 @@ var decodeCmd = &cobra.Command{
 		}
 
 		if decodeBase64 {
-			fmt.Printf("[i] This flag will decode Base64 to string...\n")
+			fmt.Printf("[i] Processing base64 string...\n")
 			decodedBase64String, err := utils.DecodeBase64ToString(inputString)
 			if err != nil {
 				fmt.Errorf("[!] Error: %v\n", err)
@@ -46,12 +46,11 @@ var decodeCmd = &cobra.Command{
 		}
 
 		if decodeRot13 {
-			decodedRot13String, err := utils.DecodeRot13(inputString)
-			if err != nil {
-				fmt.Errorf("[!] Error: %v\n", err)
-			}
+			fmt.Printf("Processing ROT13 string...\n")
 			
-			fmt.Printf("[+] Just some output: %s", decodedRot13String)
+			decodedRot13String := utils.DecodeRot13(inputString)
+			
+			fmt.Printf("[+] Just some output: %s\n", decodedRot13String)
 		}
 	},
 }
